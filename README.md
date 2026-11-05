@@ -1,9 +1,11 @@
 # oracletools
 
-Collect Oracle Database inventory and performance data, and turn it into a consolidated
-inventory, a human-readable report and (optionally) an input file for the AWS Migrations
-Acceleration Toolkit (MAT). The data is meant for **rightsizing** Oracle workloads on AWS
-(Amazon RDS for Oracle or Amazon EC2).
+Collect Oracle Database inventory and performance data for **rightsizing** Oracle workloads
+on AWS (Amazon RDS for Oracle or Amazon EC2). From the collected data, oracletools produces:
+
+- a consolidated inventory and a human-readable report
+- (optional, `--mat`) an input file for the AWS Migrations Acceleration Toolkit (MAT)
+- (optional, `--dbc`) a CMDB input file for an AWS Directional Business Case (DBC) analysis
 
 > [!IMPORTANT]
 > This sample is provided for demonstration and educational purposes only and is not intended

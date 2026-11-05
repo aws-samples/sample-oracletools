@@ -1,0 +1,2 @@
+Server Name,CDB/DB Name,Database Name,Feature Usage,DB Link,SA privilege,Jobs,BI Components,HA Setup,Ent. Edition feature usage
+"dbhost01.example.com",ORCLSE2,ORCLSE2,"Resource Manager",0,0,0,"None","None",""

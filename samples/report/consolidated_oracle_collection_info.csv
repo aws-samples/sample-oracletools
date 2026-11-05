@@ -1,0 +1,5 @@
+Server Name,CDB/DB Name,Collection Mode,Collection Time,Tool Version,Metrics Window Start,Metrics Window End,Metrics Window (Hours),Snapshot Count,Snapshot Interval (Minutes),AWR Retention (Days)
+dbhost01.example.com,ORCLCDB,AWR,2026-10-27 06:38:31 +00:00,1.1.0,2026-10-19 00:00:50,2026-10-27 06:00:20,198,198,60,8
+dbhost01.example.com,ORCLEE,AWR,2026-10-27 06:38:54 +00:00,1.1.0,2026-10-19 00:00:22,2026-10-27 06:00:05,198,198,60,8
+dbhost01.example.com,ORCLSE2,STATSPACK,2026-10-27 06:39:10 +00:00,1.1.0,2026-10-27 05:22:23,2026-10-27 06:32:23,1.2,11,10,
+"racnode1.example.com,racnode2.example.com",RACCDB,AWR,2026-10-30 00:50:08 +00:00,1.1.0,2026-10-29 14:35:17,2026-10-30 00:00:13,9.4,16,60,8

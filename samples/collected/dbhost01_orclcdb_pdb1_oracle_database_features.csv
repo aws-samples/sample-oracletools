@@ -1,0 +1,2 @@
+Server Name,CDB/DB Name,Database Name,Feature Usage,DB Link,SA privilege,Jobs,BI Components,HA Setup,Ent. Edition feature usage
+"dbhost01.example.com",ORCLCDB,PDB1,"Oracle Multitenant, Parallel SQL Query Execution",0,0,0,"None","None","Materialized Views with Query Rewrite; Parallel SQL Query Execution"

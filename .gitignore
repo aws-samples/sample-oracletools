@@ -1,0 +1,15 @@
+# Connection files may contain hosts, users or passwords
+config/*.ini
+!config/databases.sample.ini
+
+# Collection and processing outputs (customer data)
+sql/output/*
+!sql/output/.gitkeep
+oracletools_output_*/
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+*.log

@@ -1,0 +1,2 @@
+Server Name,CDB/Instance Name,Database Version,Database Edition,RAC Cluster,Nodes,Total PDB Count,vCPU Count,Total Memory (GB),Free Memory (GB),Total Storage (GB),CPU Average 99th Percentile,CPU Maximum 90th Percentile,IOPS Average 99th Percentile,IOPS Maximum 50th Percentile,Throughput Average 99th Percentile (MB/s),Throughput Maximum 50th Percentile (MB/s),Network Throughput Average (MB/s),Network Throughput Maximum (MB/s)
+"dbhost01.example.com",ORCLEE,19.0.0.0.0,Enterprise Edition,N,1,0,8,62,22,4,.044,.246,5.1,12.66,.1892,.2103,.0003,.0012

@@ -1,0 +1,5 @@
+Source Location,Source Host/Server Name,Source DB Name,Source Database Type,Source DB Edition,Source Host vCPU,Source Host Memory (GB),Source Storage (GB),Source Storage Used (GB),Source CPU Utilization (%),Source EC2 Region,Source EC2 OS,Source EC2 SQL License,Source EC2 Instance Type,Source EC2 EBS Volume Type,Source EC2 Pricing Model,Target RDS/Aurora  Instance Family/ Type,Target RDS/Aurora Optimized Instance Family/ Type
+On-Premises,dbhost01,ORCLCDB,Oracle,Enterprise,8,62,7,0.01,2.9,,,,,,,,
+On-Premises,dbhost01,ORCLEE,Oracle,Enterprise,8,62,4,0.01,3.1,,,,,,,,
+On-Premises,dbhost01,ORCLSE2,Oracle,Standard Two,8,62,3,0.01,3.1,,,,,,,,
+On-Premises,racnode1-racnode2,RACCDB,Oracle,Enterprise,16,128,11,0.74,32.3,,,,,,,,

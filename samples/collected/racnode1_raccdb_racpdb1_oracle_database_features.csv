@@ -1,0 +1,2 @@
+Server Name,CDB/DB Name,Database Name,Feature Usage,DB Link,SA privilege,Jobs,BI Components,HA Setup,Ent. Edition feature usage
+"racnode1.example.com,racnode2.example.com",RACCDB,RACPDB1,"Oracle Multitenant, Parallel SQL Query Execution, Real Application Clusters (RAC)",1,0,1,"None","RAC","Parallel SQL Query Execution; Real Application Clusters (RAC)"

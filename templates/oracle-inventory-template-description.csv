@@ -1,0 +1,66 @@
+Field Name,Scope,Type,Mandatory/Optional,Valid Range,Purpose,Example
+dbIdentifier,Identity,string,Mandatory,Free text,"Unique identifier for the database, typically in CDB/PDB format (e.g. ORCLCDB/PDB1).",ORCLCDB/PDB1
+clusterName,Cluster,string,Mandatory,Free text,Name of the cluster or host where the database instance resides.,ClusterName
+cdbName,Cluster,string,Optional,Free text,Container Database (CDB) name. Leave blank if the database is not a multitenant container.,ORCLCDB
+sourceEngine,Identity,string,Optional,oracle or sqlserver,Source database engine type; determines which assessment path is used.,oracle
+migrationSchemas,Identity,list,Optional,Comma-separated Oracle schema names,Application schema owners to migrate and verify; the DataPump SCHEMA_EXPR filter and the DMS selection rules are built from this list. Not the database or PDB name.,"HR,SALES"
+dbEngineVersion,Cluster,string,Mandatory,Free text,Full version string of the database engine (e.g. 19.0.0.0.0).,19.0.0.0.0
+dbEngineEdition,Cluster,string,Mandatory,Free text,"Edition of the database engine, such as Enterprise Edition or Standard Edition 2.",Enterprise Edition
+isRacCluster,Cluster,boolean,Mandatory,Y or N,Whether this database is part of an Oracle Real Application Clusters (RAC) deployment.,N
+nodeCount,Cluster,integer,Mandatory,Non-negative integer (>= 0),Total number of nodes in the cluster. For non-RAC databases this is typically 1.,1
+pdbCount,Cluster,integer,Mandatory,Non-negative integer (>= 0),Number of Pluggable Databases (PDBs) within the Container Database.,1
+sgaPgaTotalGb,Database,float,Mandatory,Non-negative number (>= 0),Combined System Global Area and Program Global Area memory allocation in gigabytes.,0.4
+storageAllocatedGb,Database,float,Mandatory,Non-negative number (>= 0),Total disk storage allocated to the database in gigabytes.,1.318
+storageUsedGb,Database,float,Mandatory,Non-negative number (>= 0),Actual disk storage consumed by the database in gigabytes.,0
+tableCount,Database,integer,Mandatory,Non-negative integer (>= 0),Total number of tables in the database.,7
+viewCount,Database,integer,Mandatory,Non-negative integer (>= 0),Total number of views defined in the database.,0
+indexCount,Database,integer,Mandatory,Non-negative integer (>= 0),Total number of indexes across all tables.,0
+storedProcCount,Database,integer,Mandatory,Non-negative integer (>= 0),Number of stored procedures in the database.,12
+functionCount,Database,integer,Mandatory,Non-negative integer (>= 0),Number of user-defined functions in the database.,1
+triggerCount,Database,integer,Mandatory,Non-negative integer (>= 0),Number of database triggers.,0
+trustworthyProperty,Database,string,Optional,Free text,"Whether the TRUSTWORTHY database property is enabled. Typically ""None"" when not set.",None
+tablesWithoutPk,Database,integer,Mandatory,Non-negative integer (>= 0),Number of tables that do not have a primary key defined.,7
+tablesWithoutKeyCount,Database,integer,Optional,"Non-negative integer, or blank","Number of tables with neither a primary key nor a unique index on NOT NULL columns. AWS DMS cannot identify their rows during CDC. Leave blank if not measured: blank means ""not collected"", not zero.",2
+tablesWithoutKey,Database,list,Optional,Comma-separated OWNER.TABLE names,"The tables counted in tablesWithoutKeyCount, as OWNER.TABLE.","HR.AUDIT_LOG,SALES.TMP_IMPORT"
+featureUsage,Database,list,Mandatory,"Comma-separated list (use ""None"" if empty)","Comma-separated list of Oracle features in use (e.g. Oracle Multitenant, Parallel SQL Query Execution).","Oracle Multitenant, Parallel SQL Query Execution"
+dbLinkCount,Database,integer,Mandatory,Non-negative integer (>= 0),Number of database links configured.,2
+saPrivilegeCount,Database,integer,Mandatory,Non-negative integer (>= 0),Number of users or roles with SYSDBA / system administrator privileges.,0
+jobCount,Database,integer,Mandatory,Non-negative integer (>= 0),Number of scheduled jobs (DBMS_SCHEDULER or DBMS_JOB) in the database.,14
+biComponents,Database,list,Mandatory,"Comma-separated list (use ""None"" if empty)","Comma-separated list of Business Intelligence components in use (e.g. Oracle BI Publisher). Enter ""None"" if not applicable.",None
+haSetup,Database,string,Mandatory,Free text,"High Availability configuration such as Data Guard or Active Data Guard. Enter ""None"" if not configured.",None
+eeFeatureUsage,Database,list,Mandatory,"Comma-separated list (use ""None"" if empty)","Comma-separated list of Enterprise Edition-specific features in use (e.g. Real Application Clusters, Partitioning).",Parallel SQL Query Execution
+clusterVcpuCount,Cluster,integer,Mandatory,Non-negative integer (>= 0),Aggregated number of virtual CPUs across all nodes in the cluster.,4
+clusterTotalMemoryGb,Cluster,integer,Mandatory,Non-negative integer (>= 0),Aggregated total physical memory across all cluster nodes in gigabytes.,31
+clusterFreeMemoryGb,Cluster,integer,Mandatory,Non-negative integer (>= 0),Aggregated free (available) memory across all cluster nodes in gigabytes.,15
+clusterTotalStorageGb,Cluster,integer,Mandatory,Non-negative integer (>= 0),Aggregated total storage capacity across all cluster nodes in gigabytes.,4
+clusterCpuAvgP99,Cluster,percentage,Mandatory,Non-negative number (>= 0),Cluster-level average vCPU usage at the 99th percentile.,0.16
+clusterCpuMaxP90,Cluster,percentage,Mandatory,Non-negative number (>= 0),Cluster-level maximum vCPU usage at the 90th percentile.,0.3
+clusterIopsAvgP99,Cluster,percentage,Mandatory,Non-negative number (>= 0),Cluster-level average I/O operations per second at the 99th percentile.,5
+clusterIopsMaxP50,Cluster,percentage,Mandatory,Non-negative number (>= 0),Cluster-level maximum I/O operations per second at the 50th percentile.,8
+clusterThroughputAvgP99,Cluster,percentage,Mandatory,Non-negative number (>= 0),Cluster-level average data throughput at the 99th percentile in megabytes per second.,0.124
+clusterThroughputMaxP50,Cluster,percentage,Mandatory,Non-negative number (>= 0),Cluster-level maximum data throughput at the 50th percentile in megabytes per second.,0.114
+clusterNetThroughputAvg,Cluster,float,Mandatory,Non-negative number (>= 0),Cluster-level average network throughput in megabytes per second.,0.012
+clusterNetThroughputMax,Cluster,float,Mandatory,Non-negative number (>= 0),Cluster-level maximum network throughput in megabytes per second.,0
+dbCpuAvgP99,Database,percentage,Optional,Non-negative number (>= 0),Database-level average vCPU usage at the 99th percentile. Optional.,0.04
+dbCpuMaxP90,Database,percentage,Optional,Non-negative number (>= 0),Database-level maximum vCPU usage at the 90th percentile. Optional.,0.08
+dbIopsAvgP99,Database,percentage,Optional,Non-negative number (>= 0),Database-level average I/O operations per second at the 99th percentile. Optional.,15
+dbIopsMaxP50,Database,percentage,Optional,Non-negative number (>= 0),Database-level maximum I/O operations per second at the 50th percentile. Optional.,0
+dbThroughputAvgP99,Database,percentage,Optional,Non-negative number (>= 0),Database-level average data throughput at the 99th percentile in megabytes per second. Optional.,0.156
+dbThroughputMaxP50,Database,percentage,Optional,Non-negative number (>= 0),Database-level maximum data throughput at the 50th percentile in megabytes per second. Optional.,0
+dbRedoRateAvgP99,Database,percentage,Mandatory,Non-negative number (>= 0),Average redo log generation rate at the 99th percentile in megabytes per second.,0.21
+dbRedoRateMaxP50,Database,percentage,Mandatory,Non-negative number (>= 0),Maximum redo log generation rate at the 50th percentile in megabytes per second.,0.001
+isIsvCotsApplication,Questionnaire,boolean,Optional,Y or N,Is this database used by an Independent Software Vendor (ISV) or Commercial Off-The-Shelf (COTS) application?,Y
+isCompatibleWithMinimumVersion,Questionnaire,boolean,Optional,Y or N,Is the application compatible with the minimum supported database engine version on the target platform?,Y
+isCOTSApplicationCompatibleWithMinimumSupportedVersion,Questionnaire,boolean,Optional,Y or N,"If this is a COTS application, is it certified to run on the minimum supported version of the target database engine?",Y
+osLevelAccessRequired,Questionnaire,boolean,Optional,Y or N,Does the application or DBA workflow require direct operating system-level access to the database host?,Y
+systemAccessRequired,Questionnaire,boolean,Optional,Y or N,Does the application require SYSDBA or SYSTEM-level database privileges?,Y
+preferLicenseIncluded,Questionnaire,boolean,Optional,Y or N,Should the target deployment use a License Included pricing model rather than Bring Your Own License (BYOL)?,Y
+optimiseForLicense,Questionnaire,boolean,Optional,Y or N,Should the assessment optimize the target recommendation for license cost reduction?,N
+isReadReplicaRequired,Questionnaire,boolean,Optional,Y or N,Does the application require read replica functionality on the target platform?,Y
+readReplicaCount,Questionnaire,integer,Optional,Integer 0-100,How many read-replica instances are required (1-100). Disabled and set to 0 when read replica is not required.,1
+preferEnterpriseEdition,Questionnaire,boolean,Optional,Y or N,Should the target deployment use an Enterprise Edition-equivalent service tier?,Y
+minimalCutoverDowntimeRequired,Questionnaire,boolean,Optional,Y or N,Is minimal cutover downtime required during migration?,N
+preferGoldenGate,Questionnaire,boolean,Optional,Y or N,Is Oracle GoldenGate the preferred replication method for migration?,N
+requireMultiAZ,Questionnaire,boolean,Optional,Y or N,Is Multi-AZ deployment required for high availability?,N
+targetAWSRegion,Questionnaire,string,Mandatory,Valid AWS region code (e.g. us-east-1),"AWS region where the database will be migrated (e.g. ap-southeast-2, us-east-1).",ap-southeast-2
+Environment,Questionnaire,string,Optional,prod or non-prod,Is this database deployed in a production or non-production environment? (Optional),prod

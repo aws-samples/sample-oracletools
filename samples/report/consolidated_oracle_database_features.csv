@@ -1,0 +1,7 @@
+Server Name,CDB/DB Name,Database Name,Feature Usage,DB Link,SA privilege,Jobs,BI Components,HA Setup,Ent. Edition feature usage
+dbhost01.example.com,ORCLCDB,ORCLCDB,"Oracle Multitenant, Parallel SQL Query Execution, Resource Manager",0,0,0,None,None,Parallel SQL Query Execution
+dbhost01.example.com,ORCLCDB,PDB1,"Oracle Multitenant, Parallel SQL Query Execution",0,0,0,None,None,Materialized Views with Query Rewrite; Parallel SQL Query Execution
+dbhost01.example.com,ORCLEE,ORCLEE,,0,0,0,None,None,Materialized Views with Query Rewrite
+dbhost01.example.com,ORCLSE2,ORCLSE2,Resource Manager,0,0,0,None,None,
+"racnode1.example.com,racnode2.example.com",RACCDB,RACCDB,"Oracle Multitenant, Parallel SQL Query Execution, Real Application Clusters (RAC)",0,0,0,None,RAC,Parallel SQL Query Execution; Real Application Clusters (RAC)
+"racnode1.example.com,racnode2.example.com",RACCDB,RACPDB1,"Oracle Multitenant, Parallel SQL Query Execution, Real Application Clusters (RAC)",1,0,1,None,RAC,Parallel SQL Query Execution; Real Application Clusters (RAC)

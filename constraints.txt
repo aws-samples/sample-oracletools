@@ -1,0 +1,4 @@
+# Tested versions of the direct dependencies in requirements.txt.
+# Install with: python3 -m pip install -r requirements.txt -c constraints.txt
+oracledb==3.4.2
+cryptography==49.0.0

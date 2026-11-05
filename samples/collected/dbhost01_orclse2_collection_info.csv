@@ -1,0 +1,2 @@
+Server Name,CDB/DB Name,Collection Mode,Collection Time,Tool Version,Metrics Window Start,Metrics Window End,Metrics Window (Hours),Snapshot Count,Snapshot Interval (Minutes),AWR Retention (Days)
+"dbhost01.example.com",ORCLSE2,STATSPACK,2026-10-27 06:39:10 +00:00,1.1.0,2026-10-27 05:22:23,2026-10-27 06:32:23,1.2,11,10,

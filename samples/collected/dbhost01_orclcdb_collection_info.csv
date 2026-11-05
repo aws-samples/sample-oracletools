@@ -1,0 +1,2 @@
+Server Name,CDB/DB Name,Collection Mode,Collection Time,Tool Version,Metrics Window Start,Metrics Window End,Metrics Window (Hours),Snapshot Count,Snapshot Interval (Minutes),AWR Retention (Days)
+"dbhost01.example.com",ORCLCDB,AWR,2026-10-27 06:38:31 +00:00,1.1.0,2026-10-19 00:00:50,2026-10-27 06:00:20,198,198,60,8
